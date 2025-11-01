@@ -5,22 +5,15 @@
 
 
 _start:
-    mov x0, #0              // writing to buffer
-    ldr x1, =input
+    mov x0, #0              // read from stdin into buffer
+    ldr x1, =input_msg+10
     mov x2, 20
     mov x8, 63
     svc #0
 
-    mov x0, #1              // reading from buffer
+    mov x0, #1              // write to stdout from buffer
     ldr x1, =input_msg
-    mov x2, 10
-    mov x8, 64
-    svc #0
-
-
-    mov x0, #1              // reading from buffer
-    ldr x1, =input
-    mov x2, 20
+    mov x2, 30
     mov x8, 64
     svc #0
 
@@ -31,5 +24,4 @@ _start:
 
 
 .data
-    input_msg: .ascii "You said: \n"
-    input: .asciz "%s"
+    input_msg: .ascii "You said: "
