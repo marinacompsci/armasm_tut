@@ -1,5 +1,7 @@
-.global _start
+// Write string to stdout
 
+
+.global _start
 
 
 _start:

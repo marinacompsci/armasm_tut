@@ -1,4 +1,8 @@
+// Run exit syscall
+
+
 .global _start
+
 
 _start:
     mov x0, #0      // move 0 into reg 0
